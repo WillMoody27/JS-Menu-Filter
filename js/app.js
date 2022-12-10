@@ -53,10 +53,8 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 let displayMenuItems = (menuItems) => {
-  // Map method to create new array of dataSet
   let displayMenu = menuItems
     .map((item) => {
-      // console.log(item);
       return `<article class="menu-item">
                 <img src=${item.img} alt=${item.title} />
                 <div class="item-info">
@@ -69,19 +67,13 @@ let displayMenuItems = (menuItems) => {
             </article>`;
     })
     .join("");
-  //   Add the data without commas using .join("")
-  //   Add the joined HTML to sectionCenter
   sectionCenter.innerHTML = displayMenu;
 };
 
-// NOTE: Once Items Added Dynamically Can Only Be Accessed After Items Have Been Loaded In DOM
 let displayMenuBtns = () => {
-  //   Reduce Method -> iterate over ea. item NOTE: always return values
   const categories = menu.reduce(
     (values, item) => {
-      // Check items category is in array
       if (!values.includes(item.category)) {
-        // If not in array then add item to category, else skip
         values.push(item.category);
       }
       return values;
@@ -95,23 +87,20 @@ let displayMenuBtns = () => {
     .join("");
   btnContainer.innerHTML = categoryBtn;
 
-  // Select Dynamic Btns once added to DOM Filter Buttons
+  // Filter Buttons
   const filterBtns = document.querySelectorAll(".filter-btn");
-  // Filter Items -> ForEach with filter method
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      // Obtain Category Btn id
       const category = e.currentTarget.dataset.id;
       const menuCategory = menu.filter((menuItem) => {
         if (category === menuItem.category) {
           return menuItem;
         }
       });
-      // console.log(menuCategory);
       if (category === "all") {
         displayMenuItems(menu);
       } else {
-        displayMenuItems(menuCategory); // Pass menuCategory as new array
+        displayMenuItems(menuCategory);
       }
     });
   });
