@@ -56,7 +56,7 @@ let displayMenuItems = (menuItems) => {
   let displayMenu = menuItems
     .map((item) => {
       return `<article class="menu-item">
-                <img src=${item.img} alt=${item.title} />
+                <img  class="menu-image" src=${item.img} alt=${item.title} />
                 <div class="item-info">
                     <header>
                         <h4 class="menu-title">${item.title}</h4>
