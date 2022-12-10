@@ -1,0 +1,42 @@
+body {
+  background: #e4e4e4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.section-center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.menu {
+  text-align: center;
+}
+.menu-item {
+  outline: 1px solid #828282;
+  background-color: rgb(255, 255, 237);
+  width: 200px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+  box-shadow: 10px 10px 2px #bfbfbf8d;
+  transition: 0.25s;
+}
+.menu-title {
+  text-transform: capitalize;
+}
+/* Dynamic JS Buttons */
+.filter-btn {
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  outline: 1px solid #d3d3d3;
+  background: none;
+  text-transform: capitalize;
+  font-weight: bold;
+  transition: 0.15s;
+}
+.filter-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
